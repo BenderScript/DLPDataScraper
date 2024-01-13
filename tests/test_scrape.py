@@ -15,10 +15,8 @@ class UmbrellaScraper(unittest.TestCase):
         scraper = Umbrella(url=url, text_data=text_data, pdf_data=pdf_data)
         html_content = scraper.initialize_browser()
         scraped_data = scraper.scrape_data()
-        text_files_dir = 'text_data'
-        scraper.save_data_to_files(scraped_data)
-        pdf_files_dir = 'pdf_data'
-        scraper.convert_txt_to_pdf(input_dir=text_files_dir, output_dir=pdf_files_dir)
+        scraper.save_data_to_files()
+        scraper.convert_txt_to_pdf()
         print("Scraping and conversion to PDF completed.")
         # Check if the directories are not empty
         text_files = os.listdir(text_data)

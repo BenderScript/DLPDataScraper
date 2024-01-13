@@ -25,11 +25,9 @@ class Umbrella:
         else:
             self.url = url
 
-    def convert_txt_to_pdf(self, input_dir, output_dir):
+    def convert_txt_to_pdf(self):
         """
         Convert all text files in the input directory to PDF files in the output directory.
-        :param input_dir: Directory containing text files.
-        :param output_dir: Directory where PDF files will be saved.
         """
         if not os.path.exists(self.pdf_data):
             os.makedirs(self.pdf_data)
@@ -90,10 +88,9 @@ class Umbrella:
                                     examples_list.find_all('li', attrs={'aria-level': '2'})]
                         self.data[sanitized_name] = examples
 
-    def save_data_to_files(self, data):
+    def save_data_to_files(self):
         """
         Save scraped data to text files in the specified directory.
-        :param data: Scraped data.
         """
         if not os.path.exists(self.text_data):
             os.makedirs(self.text_data)
