@@ -1,10 +1,12 @@
-Thank you for sharing the GitHub repository URL. I will include this in the README.md. Here's the updated README file with the correct GitHub URL:
+# DLP Data Scraper and Generator
 
----
+DLP Data Scraper and Generator is a Python tool designed to scrape and generate data for data loss prevention (DLP) purposes. It has two modules:
 
-# DLP Data Scraper
+* It fetches DLP test sample data from specified URLs, saves the data in text format, and then converts these text files into PDFs. 
+* It uses an OpenAI Assistant to generate DLP mock data 
 
-DLP Data Scraper is a Python tool designed to scrape and analyze data for data loss prevention (DLP) purposes. It fetches DLP test sample data from specified URLs, saves the data in text format, and then converts these text files into PDFs. The output is suitable for benchmarking DLP systems or Generative AI Language Learning Models (GenAI LLMs) for prompt injection testing.
+
+The output is suitable for benchmarking DLP systems or Generative AI Language Learning Models (GenAI LLMs) for prompt injection testing.
 
 ## Features
 
