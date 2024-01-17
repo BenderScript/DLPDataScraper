@@ -27,7 +27,7 @@ class Umbrella:
 
     def convert_txt_to_pdf(self):
         """
-        Convert all text files in the input directory to PDF files in the output directory.
+        Convert all text text_data in the input directory to PDF text_data in the output directory.
         """
         if not os.path.exists(self.pdf_data):
             os.makedirs(self.pdf_data)
@@ -90,7 +90,7 @@ class Umbrella:
 
     def save_data_to_files(self):
         """
-        Save scraped data to text files in the specified directory.
+        Save scraped data to text in the specified directory.
         """
         if not os.path.exists(self.text_data):
             os.makedirs(self.text_data)
