@@ -3,12 +3,14 @@ import shutil
 import unittest
 
 from dlp_data_scraper.umbrella import Umbrella
+from file_utils.FileUtils import FileUtils
 
 
 class UmbrellaScraper(unittest.TestCase):
     def test_umbrella_scrape(self):
-        pdf_data = "pdf_data"
-        text_data = "text_data"
+        pdf_data = "umbrella/pdf_data"
+        text_data = "umbrella/text_data"
+        file_utils = FileUtils()
         url = (
             'https://support.umbrella.com/hc/en-us/articles/4402023980692-Data-Loss-Prevention-DLP-Test-Sample-Data-for'
             '-Built-In-Data-Identifiers')
@@ -16,7 +18,7 @@ class UmbrellaScraper(unittest.TestCase):
         html_content = scraper.initialize_browser()
         scraped_data = scraper.scrape_data()
         scraper.save_data_to_files()
-        scraper.convert_txt_to_pdf()
+        file_utils.convert_txt_to_pdf(text_data, pdf_data)
         print("Scraping and conversion to PDF completed.")
         # Check if the directories are not empty
         text_files = os.listdir(text_data)

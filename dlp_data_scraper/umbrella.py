@@ -11,45 +11,18 @@ from bs4 import BeautifulSoup
 
 class Umbrella:
 
-    def __init__(self, url=None, font_path="/Library/Fonts/Arial Unicode.ttf", text_data="text_data",
+    def __init__(self, url=None, text_data="text_data",
                  pdf_data="pdf_data"):
         self.html = None
         self.data = {}
-        self.pdf_data = 'pdf_data'
-        self.text_data = 'text_data'
-        self.font_path = '/Library/Fonts/Arial Unicode.ttf'
+        self.pdf_data = pdf_data
+        self.text_data = text_data
         if url is None:
             self.url = (
                 'https://support.umbrella.com/hc/en-us/articles/4402023980692-Data-Loss-Prevention-DLP-Test-Sample'
                 '-Data-for-Built-In-Data-Identifiers')
         else:
             self.url = url
-
-    def convert_txt_to_pdf(self):
-        """
-        Convert all text text_data in the input directory to PDF text_data in the output directory.
-        """
-        if not os.path.exists(self.pdf_data):
-            os.makedirs(self.pdf_data)
-
-        for filename in os.listdir(self.text_data):
-            if filename.endswith('.txt'):
-                input_file_path = os.path.join(self.text_data, filename)
-                output_file_path = os.path.join(self.pdf_data, filename.replace('.txt', '.pdf'))
-
-                pdf = FPDF()
-                pdf.add_page()
-                pdf.add_font('ArialUnicode', '', self.font_path, uni=True)
-                pdf.set_font('ArialUnicode', '', 12)
-
-                with open(input_file_path, 'r', encoding='utf-8') as file:
-                    for line in file:
-                        cleaned_line = line.replace('\r', '').strip()  # Strips carriage return and trailing spaces
-                        pdf.cell(200, 10, txt=cleaned_line, ln=True)
-
-                pdf.output(output_file_path)
-
-        print("Conversion completed.")
 
     # Function to sanitize category names into valid filenames
     def sanitize_filename(self, name):
