@@ -22,8 +22,8 @@ class UmbrellaScraper(unittest.TestCase):
         text_files = os.listdir(text_data)
         pdf_files = os.listdir(pdf_data)
 
-        self.assertTrue(text_files, "No text files found in the text_data directory.")
-        self.assertTrue(pdf_files, "No PDF files found in the pdf_data directory.")
+        self.assertTrue(text_files, "No text text_data found in the text_data directory.")
+        self.assertTrue(pdf_files, "No PDF text_data found in the pdf_data directory.")
 
         # Check if for every .txt file in text_data, there is a corresponding .pdf in pdf_data
         text_files_without_extension = {file.split('.')[0] for file in text_files if file.endswith('.txt')}
